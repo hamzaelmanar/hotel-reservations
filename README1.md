@@ -6,143 +6,143 @@ Un acteur majeur dans les solutions technologiques pour l'industrie du voyage fa
 
 ## PHASE 1 - ARCHITECTURE DATA SUR GCP
 
-    Configuration initiale GCP
+Configuration initiale GCP
 
-    Création d'un nouveau projet GCP
-    Activation des APIs nécessaires :
-        Cloud Storage
-        BigQuery
-        Cloud Composer (Airflow managé)
-        Cloud Build
-        Container Registry
-        Kubernetes Engine
-        Pub/Sub
-        Cloud Functions
-        Dataflow
-        Secret Manager
-    Configuration des rôles IAM et des comptes de service
-    Mise en place de la facturation et des budgets
-    Configuration du VPC et des règles de firewall
+Création d'un nouveau projet GCP
+Activation des APIs nécessaires :
+Cloud Storage
+BigQuery
+Cloud Composer (Airflow managé)
+Cloud Build
+Container Registry
+Kubernetes Engine
+Pub/Sub
+Cloud Functions
+Dataflow
+Secret Manager
+Configuration des rôles IAM et des comptes de service
+Mise en place de la facturation et des budgets
+Configuration du VPC et des règles de firewall
 
-    Mise en place du Data Lake (Cloud Storage)
+Mise en place du Data Lake (Cloud Storage)
 
-    Création de 3 buckets distincts :
-        hotel-raw-data : données brutes
-        hotel-processed-data : données transformées
-        hotel-config : fichiers de configuration
-    Configuration du lifecycle management
-    Mise en place des règles de rétention
-    Configuration des IAM pour chaque bucket
-    Activation du versioning
-    Configuration des règles de transfert de données
+Création de 3 buckets distincts :
+hotel-raw-data : données brutes
+hotel-processed-data : données transformées
+hotel-config : fichiers de configuration
+Configuration du lifecycle management
+Mise en place des règles de rétention
+Configuration des IAM pour chaque bucket
+Activation du versioning
+Configuration des règles de transfert de données
 
-    Configuration BigQuery
+Configuration BigQuery
 
-    Création des datasets :
-        raw_data : données brutes
-        staging : données intermédiaires
-        prod : données finales
-    Configuration des tables partitionnées
-    Mise en place des vues matérialisées
-    Configuration des jobs de transfert
-    Définition des politiques de rétention
-    Configuration des quotas et limites
-    Mise en place des autorisations par dataset
+Création des datasets :
+raw_data : données brutes
+staging : données intermédiaires
+prod : données finales
+Configuration des tables partitionnées
+Mise en place des vues matérialisées
+Configuration des jobs de transfert
+Définition des politiques de rétention
+Configuration des quotas et limites
+Mise en place des autorisations par dataset
 
-    Déploiement Cloud Composer
+Déploiement Cloud Composer
 
-    Création de l'environnement Composer
-    Configuration des ressources :
-        Taille du cluster GKE
-        Nombre de workers
-        Version d'Airflow
-    Configuration du networking
-    Mise en place des connexions vers BigQuery et Storage
-    Configuration des variables d'environnement
-    Mise en place du monitoring
-    Configuration des backups
+Création de l'environnement Composer
+Configuration des ressources :
+Taille du cluster GKE
+Nombre de workers
+Version d'Airflow
+Configuration du networking
+Mise en place des connexions vers BigQuery et Storage
+Configuration des variables d'environnement
+Mise en place du monitoring
+Configuration des backups
 
 ## PHASE 2 - DATA INTEGRATION
 
-    Pipeline d'Ingestion
+Pipeline d'Ingestion
 
-    Configuration de Cloud Functions pour :
-        Réception des données API
-        Validation des données
-        Transformation initiale
-    Mise en place de Pub/Sub topics pour :
-        Nouvelles réservations
-        Mises à jour
-        Annulations
-    Configuration de Dataflow pour le streaming
-    Mise en place des schémas de validation
+Configuration de Cloud Functions pour :
+Réception des données API
+Validation des données
+Transformation initiale
+Mise en place de Pub/Sub topics pour :
+Nouvelles réservations
+Mises à jour
+Annulations
+Configuration de Dataflow pour le streaming
+Mise en place des schémas de validation
 
-    Transformation avec dbt sur BigQuery
+Transformation avec dbt sur BigQuery
 
-    Installation et configuration de dbt-bigquery
-    Structuration du projet dbt :
-        Sources
-        Staging models
-        Intermediate models
-        Mart models
-    Configuration des tests dbt
-    Mise en place du scheduling
-    Configuration des documentations
-    Déploiement via Cloud Build
+Installation et configuration de dbt-bigquery
+Structuration du projet dbt :
+Sources
+Staging models
+Intermediate models
+Mart models
+Configuration des tests dbt
+Mise en place du scheduling
+Configuration des documentations
+Déploiement via Cloud Build
 
-    Pipeline de Monitoring
+Pipeline de Monitoring
 
-    Mise en place de Cloud Monitoring
-    Création des dashboards pour :
-        Performances des pipelines
-        Qualité des données
-        Coûts
-        Latence
-    Configuration des alertes
-    Mise en place des logs exports
-    Configuration de l'error tracking
+Mise en place de Cloud Monitoring
+Création des dashboards pour :
+Performances des pipelines
+Qualité des données
+Coûts
+Latence
+Configuration des alertes
+Mise en place des logs exports
+Configuration de l'error tracking
 
-    Sécurité et Gouvernance
+Sécurité et Gouvernance
 
-    Configuration du DLP (Data Loss Prevention)
-    Mise en place des politiques de classification
-    Configuration des règles d'export
-    Mise en place des audits
-    Configuration de Cloud Asset Inventory
-    Mise en place des politiques de sécurité
+Configuration du DLP (Data Loss Prevention)
+Mise en place des politiques de classification
+Configuration des règles d'export
+Mise en place des audits
+Configuration de Cloud Asset Inventory
+Mise en place des politiques de sécurité
 
-    Disaster Recovery
+Disaster Recovery
 
-    Configuration des backups automatiques
-    Mise en place des procédures de restauration
-    Documentation des procédures d'urgence
-    Tests de recovery
-    Configuration de la réplication
+Configuration des backups automatiques
+Mise en place des procédures de restauration
+Documentation des procédures d'urgence
+Tests de recovery
+Configuration de la réplication
 
-    Documentation
+Documentation
 
-    Architecture technique détaillée
-    Procédures opérationnelles
-    Guides de troubleshooting
-    Documentation des APIs
-    Guides de maintenance
-    Plans de continuité
+Architecture technique détaillée
+Procédures opérationnelles
+Guides de troubleshooting
+Documentation des APIs
+Guides de maintenance
+Plans de continuité
 
-    Tests et Validation
+Tests et Validation
 
-    Tests de performance
-    Tests de charge
-    Tests de failover
-    Tests de sécurité
-    Tests d'intégration
-    Validation des SLAs
+Tests de performance
+Tests de charge
+Tests de failover
+Tests de sécurité
+Tests d'intégration
+Validation des SLAs
 
 Points d'attention spécifiques à GCP :
 
-    Optimisation des coûts BigQuery
-    Gestion des quotas et limites
-    Configuration du networking
-    Sécurisation des APIs
-    Monitoring des coûts
-    Gestion des identités
-    Optimisation des performances
+Optimisation des coûts BigQuery
+Gestion des quotas et limites
+Configuration du networking
+Sécurisation des APIs
+Monitoring des coûts
+Gestion des identités
+Optimisation des performances
